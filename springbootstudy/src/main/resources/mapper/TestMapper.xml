@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jack.mapper.TestMapper" >
+
+    <!--通过id查找-->
+    <select id="findTestById" parameterType="int" resultType="com.jack.entity.Test">
+        SELECT * from test where id = #{id}
+    </select>
+    <!--增加-->
+    <insert id="add" parameterType="com.jack.entity.Test">
+        INSERT INTO test(name,note) VALUES (#{name},#{note})
+    </insert>
+    <!--删除-->
+    <delete id="deleteById" parameterType="int">
+        DELETE FROM test where id = #{id}
+    </delete>
+    <!--更新-->
+    <update id="updateByID" parameterType="com.jack.entity.Test">
+        UPDATE test SET NAME =#{name},note =#{note} where id = #{id}
+    </update>
+    <!--模糊查询-->
+    <select id="findByName" parameterType="string" resultType="com.jack.entity.Test">
+        SELECT id,name,note from test where name like concat('%',#{name},'%')
+    </select>
+</mapper>

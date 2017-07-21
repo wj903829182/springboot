@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: spring-cloud-producer  #应用程序名
+
+server:
+  port: 9094   #端口号
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9090/eureka/  #注册中心地址

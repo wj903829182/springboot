@@ -1,0 +1,44 @@
+server:
+  port: 9092
+
+spring:
+  application:
+    name: spring-cloud-consumer
+  datasource:
+    name: test
+    url: jdbc:mysql://192.168.9.107:3306/jack?characterEncoding=utf8&useSSL=true
+    username: root
+    password: root
+    #使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9090/eureka/
+mybatis:
+  mapperLocations: classpath:mapper/*.xml  #指定*Mapper.xml的位置
+
+#设置日志级别，打印mybatis的日志
+logging:
+  level:
+    root: debug
+
+
+
