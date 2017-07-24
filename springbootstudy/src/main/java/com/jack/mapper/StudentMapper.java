@@ -1,16 +1,10 @@
 package com.jack.mapper;
 
 import com.jack.entity.Student;
-import java.util.List;
+import tk.mybatis.mapper.common.Mapper;
 
-public interface StudentMapper {
-    int deleteByPrimaryKey(Integer id);
-
-    int insert(Student record);
-
-    Student selectByPrimaryKey(Integer id);
-
-    List<Student> selectAll();
-
-    int updateByPrimaryKey(Student record);
+/**
+ * StudentMapper集成了通用Mapper，提供了单表的基础操作
+ */
+public interface StudentMapper extends Mapper<Student> {
 }

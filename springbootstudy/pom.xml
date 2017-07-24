@@ -115,6 +115,13 @@
             <scope>compile</scope>
             <optional>true</optional>
         </dependency>-->
+        <!--集成通用mapper-->
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper</artifactId>
+            <!-- 建议使用最新版本 -->
+            <version>3.4.2</version>
+        </dependency>
 
     </dependencies>
 
@@ -139,11 +146,18 @@
                     <!--<configurationFile>${basedir}/src/main/resources/generatorConfig.xml</configurationFile>-->
                 </configuration>
                 <dependencies>
+                    <!--mysql驱动包-->
                     <dependency>
                         <groupId>mysql</groupId>
                         <artifactId>mysql-connector-java</artifactId>
                         <version>5.1.42</version>
                         <scope>runtime</scope>
+                    </dependency>
+                    <!--集成通用mapper依赖-->
+                    <dependency>
+                        <groupId>tk.mybatis</groupId>
+                        <artifactId>mapper</artifactId>
+                        <version>3.4.2</version>
                     </dependency>
                 </dependencies>
             </plugin>

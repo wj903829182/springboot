@@ -62,6 +62,7 @@ public class MybatisConfig {
     public SqlSessionFactory sqlSessionFactoryBean(DataSource druidDataSource) {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(druidDataSource);
+       bean.setTypeAliasesPackage("com.jack.entity");
         LogFactory.useLog4JLogging();
         //添加XML目录
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
