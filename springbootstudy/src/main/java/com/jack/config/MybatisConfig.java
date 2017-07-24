@@ -2,7 +2,9 @@ package com.jack.config;
 
 
 import com.alibaba.druid.pool.DruidDataSource;
+import com.github.pagehelper.PageHelper;
 import org.apache.ibatis.logging.LogFactory;
+import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
@@ -15,6 +17,7 @@ import org.springframework.core.io.support.ResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
 import javax.sql.DataSource;
+import java.util.Properties;
 
 /**
  * Created by jackc on 2017/7/20.
@@ -62,8 +65,20 @@ public class MybatisConfig {
     public SqlSessionFactory sqlSessionFactoryBean(DataSource druidDataSource) {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(druidDataSource);
-       bean.setTypeAliasesPackage("com.jack.entity");
+        bean.setTypeAliasesPackage("com.jack.entity");
         LogFactory.useLog4JLogging();
+        //分页插件
+        PageHelper pageHelper = new PageHelper();
+        Properties props = new Properties();
+        props.setProperty("reasonable", "true");
+        props.setProperty("supportMethodsArguments", "true");
+        props.setProperty("returnPageInfo", "check");
+        props.setProperty("params", "count=countSql");
+        pageHelper.setProperties(props);
+        //添加分页插件
+        Interceptor[] plugins =  new Interceptor[]{pageHelper};
+        bean.setPlugins(plugins);
+
         //添加XML目录
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         String xmlPath = environment.getProperty("mybatis.mapperLocations");
