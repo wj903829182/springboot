@@ -27,7 +27,10 @@
     introspectedColumnImpl：类全限定名，用于扩展MBG
 -->
 
-    <context id="Mysql" targetRuntime="MyBatis3Simple">
+    <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+        <property name="mergeable" value="false"/>
         <!--https://mapperhelper.github.io/docs/3.usembg/，自动生成代码的通用mapper插件-->
         <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
             <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
@@ -35,7 +38,7 @@
            <!-- <property name="caseSensitive" value="true"/>-->
         </plugin>
         <!-- 注释 -->
-        <commentGenerator >
+      <commentGenerator >
             <!-- 是否取消自动生成的注释 -->
             <!--<property name="suppressAllComments" value="false"/>-->
             <!-- 是否生成注释代时间戳-->
@@ -53,7 +56,7 @@
         <!-- 类型转换 -->
         <javaTypeResolver >
             <!-- 是否使用bigDecimal， false可自动转化以下类型（Long, Integer, Short, etc.） -->
-            <property name="forceBigDecimals" value="false" />
+            <!--<property name="forceBigDecimals" value="false" />-->
         </javaTypeResolver>
 
         <!-- 生成实体类地址 -->
