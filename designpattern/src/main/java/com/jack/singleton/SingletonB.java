@@ -6,10 +6,13 @@ package com.jack.singleton;
  */
 public class SingletonB {
     private static SingletonB singletonB = null;
-    private SingletonB(){}
-    public static SingletonB getSingletonB(){
+
+    private SingletonB() {
+    }
+
+    public static SingletonB getSingletonB() {
         if (singletonB == null) {
-            synchronized (SingletonB.class){
+            synchronized (SingletonB.class) {
                 if (singletonB == null) {
                     singletonB = new SingletonB();
                 }
