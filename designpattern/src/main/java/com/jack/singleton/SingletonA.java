@@ -2,7 +2,7 @@ package com.jack.singleton;
 
 /**
  * Created by jack on 2017/8/1.
- * 单例模式,饿汗模式
+ * 单例模式,饿汉模式
  */
 public class SingletonA {
     /**
@@ -20,7 +20,7 @@ public class SingletonA {
      * 获取单例对象
      * @return
      */
-    public static SingletonA getSingleton(){
+    public static SingletonA getSingletonA(){
         return singletonA;
     }
 }
