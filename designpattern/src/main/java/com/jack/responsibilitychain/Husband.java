@@ -2,6 +2,7 @@ package com.jack.responsibilitychain;
 
 /**
  * Created by jack on 2017/8/7.
+ * 丈夫类
  */
 public class Husband extends Handler{
 
@@ -18,7 +19,7 @@ public class Husband extends Handler{
      */
     @Override
     public void response(IWomen women) {
-        System.out.println("---------女儿向丈夫请示----------");
+        System.out.println("---------妻子向丈夫请示----------");
         System.out.println(women.getRequest());
         System.out.println("丈夫的答复是：同意\n");
     }

@@ -2,6 +2,7 @@ package com.jack.responsibilitychain;
 
 /**
  * Created by jack on 2017/8/7.
+ * 处理抽象类
  */
 public abstract class Handler {
     /**
