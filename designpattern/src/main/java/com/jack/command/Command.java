@@ -2,6 +2,7 @@ package com.jack.command;
 
 /**
  * Created by jack on 2017/8/4.
+ * 命令抽象类
  */
 public abstract class Command {
     //把三个组都定义好，子类可以直接使用
