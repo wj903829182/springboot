@@ -2,7 +2,7 @@ package com.jack.decoratemodel;
 
 /**
  * Created by jack on 2017/8/7.
- * 抽象类，学校成绩
+ * 抽象类，学生成绩
  */
 public abstract class SchoolReport {
     /**
