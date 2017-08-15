@@ -13,5 +13,5 @@ public abstract class SchoolReport {
     /**
      * 成绩单要家长签名
      */
-    public abstract void sign();
+    public abstract void sign(String name);
 }
