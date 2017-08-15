@@ -22,6 +22,6 @@ public class FouthGradeSchoolReport extends  SchoolReport{
      */
     @Override
     public void sign(String name) {
-
+        System.out.println("家长签名为："+name);
     }
 }
