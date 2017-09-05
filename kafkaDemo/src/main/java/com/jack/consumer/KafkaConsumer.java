@@ -1,6 +1,6 @@
 package com.jack.consumer;
 
-import com.jack.producer.KafkaProducer;
+//import com.jack.producer.KafkaProducer;
 import kafka.consumer.ConsumerConfig;
 import kafka.consumer.ConsumerIterator;
 import kafka.consumer.KafkaStream;
@@ -17,8 +17,8 @@ import java.util.Properties;
  * Created by jack on 2017/9/5.
  * kafka消费者
  */
-public class KafkaConsumer {
-    private final ConsumerConnector consumer;
+/*public class KafkaConsumer {*/
+   /* private final ConsumerConnector consumer;
 
     private KafkaConsumer() {
         Properties props = new Properties();
@@ -61,5 +61,5 @@ public class KafkaConsumer {
 
     public static void main(String[] args) {
         new KafkaConsumer().consume();
-    }
-}
+    }*/
+/*}*/
