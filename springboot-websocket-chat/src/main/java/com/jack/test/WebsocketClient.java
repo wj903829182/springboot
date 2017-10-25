@@ -12,6 +12,10 @@ import java.net.URISyntaxException;
 /**
  * Created by jack on 2017/10/25.
  */
+
+/**
+ * http://www.cnblogs.com/akanairen/p/5616351.html
+ */
 public class WebsocketClient {
     public static WebSocketClient client;
     public static void main(String[] args) {
