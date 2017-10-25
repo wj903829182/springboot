@@ -23,4 +23,9 @@ public class Client {
     public void onError(Throwable t) {
         t.printStackTrace();
     }
+
+    @OnClose
+    public void onClose(Session session){
+        System.out.println("websocket连接关闭:"+session.getId());
+    }
 }

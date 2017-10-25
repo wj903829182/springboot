@@ -21,6 +21,7 @@ public class WebsocketClient2 {
 
             WebSocketContainer container = ContainerProvider.getWebSocketContainer(); // 获取WebSocket连接器，其中具体实现可以参照websocket-api.jar的源码,Class.forName("org.apache.tomcat.websocket.WsWebSocketContainer");
             String uri = "ws://localhost:9090/websocket";
+            //String uri = "ws://localhost:9090/log";
             Session session = null; // 连接会话
             session = container.connectToServer(Client.class, new URI(uri));
             session.getBasicRemote().sendText("123132132131"); // 发送文本消息
