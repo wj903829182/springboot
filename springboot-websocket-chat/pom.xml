@@ -45,6 +45,7 @@
 			<version>1.2.39</version>
 		</dependency>
 
+		<!--websocket作为客户端-->
 		<dependency>
 			<groupId>org.java-websocket</groupId>
 			<artifactId>Java-WebSocket</artifactId>

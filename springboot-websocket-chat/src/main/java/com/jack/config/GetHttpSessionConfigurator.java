@@ -23,6 +23,7 @@ public class GetHttpSessionConfigurator extends ServerEndpointConfig.Configurato
     public void modifyHandshake(ServerEndpointConfig sec, HandshakeRequest request, HandshakeResponse response) {
         //super.modifyHandshake(sec, request, response);
         HttpSession httpSession = (HttpSession)request.getHttpSession();
+        //解决httpSession为null的情况
         if (httpSession == null){
             httpSession = new HttpSession() {
                 @Override
