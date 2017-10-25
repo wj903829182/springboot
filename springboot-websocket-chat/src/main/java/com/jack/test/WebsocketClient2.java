@@ -7,12 +7,9 @@ package com.jack.test;
 import com.jack.bean.Client;
 
 import javax.websocket.ContainerProvider;
-import javax.websocket.DeploymentException;
 import javax.websocket.Session;
 import javax.websocket.WebSocketContainer;
-import java.io.IOException;
 import java.net.URI;
-import java.net.URISyntaxException;
 
 /**
  * http://www.cnblogs.com/akanairen/p/5616351.html
@@ -28,6 +25,7 @@ public class WebsocketClient2 {
             session = container.connectToServer(Client.class, new URI(uri));
             session.getBasicRemote().sendText("123132132131"); // 发送文本消息
             session.getBasicRemote().sendText("4564546");
+            session.close();
         }catch (Exception e){
             e.printStackTrace();
         }
