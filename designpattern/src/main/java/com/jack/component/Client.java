@@ -17,13 +17,14 @@ public class Client {
         display(root);
     }
 
-    public static void display(Composite root) {
+    public static void display(Component root) {
         for (Component component : root.getChildren()) {
             if (component instanceof Leaf) {//叶子节点
                 component.doSomething();
             } else {
                 //树枝节点
-                display((Composite) component);
+                //display((Composite) component);
+                display(component);
 
             }
         }
