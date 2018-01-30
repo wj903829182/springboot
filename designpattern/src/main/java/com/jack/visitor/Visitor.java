@@ -2,7 +2,7 @@ package com.jack.visitor;
 
 /**
  * Created by jack on 2018/1/29.
- * 具体范围者
+ * 具体访问者
  */
 public class Visitor implements IVisitor {
     /**

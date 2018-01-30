@@ -4,6 +4,7 @@ import java.util.Random;
 
 /**
  * Created by jack on 2018/1/29.
+ * 结构对象
  */
 public class ObjectStruture {
 
